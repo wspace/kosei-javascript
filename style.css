@@ -1,0 +1,40 @@
+body {
+  margin: 4rem;
+}
+body > div {
+  margin: 2rem;
+}
+#editor {
+  text-align: right;
+}
+#input_program {
+  height: 10em;
+  width: 100%;
+  font-family: sans-serif;
+}
+#run {
+  margin-top: 0.5rem;
+}
+.frame {
+  min-height: 5em;
+  max-height: 20em;
+  padding: 0.5em;
+  border: #000 solid 1px;
+  border-radius: 3px;
+  overflow: auto;
+}
+pre {
+  font-family: sans-serif;
+  font-size: 0.8em;
+  line-height: 1.5em;
+  margin: 0;
+}
+pre span {
+  padding: 0 0.4em;
+}
+.running {
+  color: #fff;
+  background-color: #00f;
+  border-radius: 0.6em;
+  padding: 0;
+}
