@@ -31,6 +31,7 @@ var stop_run = false
 var raw_program
 var program
 var program_i
+var run_btn = document.getElementById("run")
 var output = document.getElementById("output")
 var sleep_time = 30
 
@@ -150,7 +151,10 @@ function run() {
   if (program_i[0] + program_i[1] < program.length && !stop_run) setTimeout(run, sleep_time)
   else {
     program_i[0] = program.length
-    setTimeout(show, sleep_time)
+    setTimeout(()=>{
+      show()
+      run_btn.disabled = false
+    }, sleep_time)
   }
 }
 
@@ -209,7 +213,8 @@ function show() {
   program_wrapper.scrollTo(0, line_height * (line_count + 1) - program_wrapper.offsetHeight)
 }
 
-document.getElementById("run").addEventListener("click", ()=>{
+run_btn.addEventListener("click", ()=>{
+  run_btn.disabled = true
   stop_run = false
   raw_program = document.getElementById("input_program").value
   program = raw_program.replace(/[^ \t\n]/g, "")
